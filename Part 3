@@ -1,5 +1,13 @@
 import random
 
+# locations
+lA1 = 0
+lA2 = 0
+
+# prices
+cA1 = 0
+cA2 = 0
+
 #Calculates the score for a given store
 def scorecalc(customerloc, storeloc, price):
     if customerloc >= storeloc:
@@ -39,4 +47,6 @@ def final(La1, La2, Ca1, Ca2):
         elif chance < proba2:
             profit += (Ca2-2)
     return profit / 1000000
+    
+    print(final(lA1, lA2, cA1, cA2))
 
