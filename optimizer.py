@@ -42,40 +42,6 @@ def profit(La1, La2, Ca1, Ca2):
             profit += (Ca2-2)
     return profit / 1000
 
-'''def optimizer (LA1, LA2, CA1, CA2, stepL, stepC):
-    money = []
-
-    for l1 in range(-stepL,2*stepL, stepL):
-        for l2 in range(-stepL,2*stepL, stepL):
-            for c1 in range(-stepC,2*stepC, stepC):
-                for c2 in range(-stepC,2*stepC, stepC):
-                    if (l1 <= 10) and (l1 >= 0) and (l2 <= 10) and (l2 >= 0) and (c1 >= 0) and (c2 >= 0):
-                        money += [(profit(LA1+l1, LA2+l2, CA1+c1, CA2+c2), [LA1+l1, LA2+l2, CA1+c1, CA2+c2])]
-
-    #money = [(1,[1,1,1,1]),(2, [2,2,2,2]), (3, [3,3,3,3]), (4, [4,4,4,4])]
-
-    prof = tuple(map(max, zip(*money)))
-    print(prof)
-    money.remove(prof)
-    closeProf = max(money)[0]
-
-    # decide if close enough to return
-    if (prof - closeProf) < 0.0000001:
-        return prof
-    # adjust steps (stepC should not go below 0.01)
-    if (prof - closeProf) < 0.000001: 
-        return optimizer(LA1, LA2, CA1, CA2, stepL/10, stepC)
-    # comp profs and steps 
-    #return optimizer(nLA1, nLA2, nCA1, nCA2, stepL, stepC)
-    return prof
-
-# stepL starts at 1
-
-#print(optimizer(LA1, LA2, CA1, CA2, stepL, stepC))
-
-#print(profit(5,5,5,5))
-'''
-
 def optimizer ():
     approx = []
     for l1 in range(0,11):
@@ -136,5 +102,3 @@ def optimizer ():
     return "Average profit:", high[0], "Store A1 location:", high[1][0], "price: $", high[1][2], ". Store A2 location:", high[1][1], "price: $", high[1][3]
 
 print(optimizer())
-
-#print(profit(10,10,6,6))
